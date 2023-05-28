@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import CountryDatasets from './page';
 import './App.css';
+import SummaryPage from './summary';
 
 function MainApp() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/geonode/datasets/:countryCode" element={<MainApp />} />
+        <Route path="/geonode/summary" element={<SummaryPage />} />
       </Routes>
     </Router>
   );
