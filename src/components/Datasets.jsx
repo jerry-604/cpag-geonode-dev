@@ -45,7 +45,9 @@ const CountryDatasets = ({ countryCode }) => {
       dataIndex: 'category',
       key: 'category',
       render: (category) => category ? category.identifier : 'N/A',
-      responsive: ['lg'],
+      responsive: ['md'],
+      className: 'title-column',
+
     },
     {
       title: 'Title',
