@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@media print {
+  @page {
+    size: landscape;
+  }
+}
+

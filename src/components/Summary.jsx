@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { Typography, List, Spin, Table } from 'antd';
-import { Typography, List, Spin, Table, Progress } from 'antd';
-import './page.css';
+import { Typography, List, Table, Progress } from 'antd';
+import '../css/datasets.css';
 
 const { Title } = Typography;
 
@@ -69,7 +68,9 @@ const SummaryPage = () => {
       title: 'ISO Code',
       dataIndex: 'code',
       key: 'code',
-      width: 500,
+      // width: 500,
+      className: 'title-column'
+
     },
     {
       title: 'Name',
@@ -96,14 +97,14 @@ const SummaryPage = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      width: 500,
+    //   width: 500,
       
     },
     {
       title: 'Description',
       dataIndex: 'i18n',
       key: 'i18n',
-      render: i18n => i18n.en
+      render: i18n => i18n && i18n.en ? i18n.en : 'N/A'
     },
   ];
 

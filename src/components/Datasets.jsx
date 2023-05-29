@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table, Modal, Card } from 'antd';
-import './page.css';
-// import './CountryDatasets.css'; // Import the CSS file
+import '../css/datasets.css'
 import { CloseOutlined } from '@ant-design/icons';
 
 const CountryDatasets = ({ countryCode }) => {
@@ -45,38 +44,47 @@ const CountryDatasets = ({ countryCode }) => {
       title: 'Category',
       dataIndex: 'category',
       key: 'category',
-      render: (category) => category ? category.identifier : '',
-      responsive: ['md'],
-    //   width: 100,
+      render: (category) => category ? category.identifier : 'N/A',
+      responsive: ['lg'],
     },
     {
       title: 'Title',
       dataIndex: 'title',
       key: 'title',
-      width: 1,
+      render: (title) => title ? title : 'N/A',
+      className: 'title-column'
     },
     {
-      title: 'Abstract',
-      dataIndex: 'raw_abstract',
-      key: 'abstract',
+        title: 'Abstract',
+        dataIndex: 'raw_abstract',
+        key: 'abstract',
+        render: (raw_abstract) => raw_abstract ? raw_abstract : 'N/A',
     },
     {
       title: 'SRID',
       dataIndex: 'srid',
       key: 'srid',
-      responsive: ['lg'],
+      render: (srid) => srid ? srid : 'N/A',
+      responsive: ['xl'],
     },
     {
       title: 'Date',
       dataIndex: 'date',
       key: 'date',
-      responsive: ['lg'],
+      render: (date) => date ? date : 'N/A',
+      responsive: ['xl'],
     },
     {
       title: 'Attribution',
       dataIndex: 'attribution',
       key: 'attribution',
+      render: (attribution) => attribution ? attribution : 'N/A',
+      responsive: ['md'],
     },
+];
+
+
+    
     // {
     //   title: 'Thumbnail Url',
     //   dataIndex: 'thumbnail_url',
@@ -87,7 +95,7 @@ const CountryDatasets = ({ countryCode }) => {
     //   dataIndex: 'detail_url',
     //   key: 'detailUrl',
     // },
-  ];
+
 
   const handleRowClick = (record) => {
     setSelectedDataset(record);
@@ -99,14 +107,14 @@ const CountryDatasets = ({ countryCode }) => {
 
   return (
     <div className="Container">
-      <h1 style={ {margin:"1em", top:"0px"}}>Datasets for {regionName}</h1>
+     {regionName && <h1 style={ {margin:"1em", top:"0px"}}>Datasets for {regionName}</h1>}
       <Table
         columns={columns}
         dataSource={datasets}
         rowKey="id"
         loading={loading}
         pagination={false}
-        scroll={{ x: 768 }}
+        scroll={{ x: 20 }}
         // scroll={{ x: 'max-content' }}
         onRow={(record) => ({
           onClick: () => handleRowClick(record),
