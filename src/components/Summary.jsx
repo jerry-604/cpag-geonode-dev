@@ -21,10 +21,9 @@ const SummaryPage = () => {
         setIsLoading(false);
       }
     };
-  
+
     fetchCategories();
   }, []);
-  
 
   return (
     <div>
@@ -38,18 +37,17 @@ const SummaryPage = () => {
           <h1 className="summary-title">Summary</h1>
           <div className="category-list">
             {categories.map(category => (
-                <Tooltip title={category.description}>
+              <Tooltip title={category.description} key={category.id}>
                 <Card className="category-card center-align">
-                  <a key={category.id} href={`https://geonode.thecpag.org/catalogue/#/?filter%7Bcategory.identifier.in%7D=${category.identifier}`} className="category-link">
-
+                  <a href={`https://geonode.thecpag.org/catalogue/#/?filter%7Bcategory.identifier.in%7D=${category.identifier}`} className="category-link">
                     <span>
                       <i className={`fa ${category.fa_class} fa-4x`}></i>
                       <Badge count={`${category.count}`} showZero className="category-count-badge" style={{ backgroundColor: '#1850f6' }} />
                     </span>
-                  <div className="category-description">{category.gn_description_en}</div>
+                    <div className="category-description">{category.gn_description_en}</div>
                   </a>
                 </Card>
-                </Tooltip>
+              </Tooltip>
             ))}
           </div>
         </>

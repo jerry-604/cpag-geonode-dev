@@ -11,6 +11,6 @@
 
 @media print {
   @page {
-    size: landscape;
+    size: landscape; /* Set the page size to landscape orientation when printing */
   }
 }

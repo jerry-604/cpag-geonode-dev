@@ -9,29 +9,31 @@
 }
 
 .summary-title {
-  text-align: center;
+  text-align: center; /* Aligns the summary title to the center */
 }
+
 .loading-message {
-  text-align: center;
+  text-align: center; /* Aligns the loading message to the center */
 }
 
 .category-link {
-  color: inherit;
-  text-decoration: none;
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove the underline for the link */
 }
 
-  .center-align {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    /* height: 100%;s */
-  }
-  
-  .category-description {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  .category-card {
-    position: relative;
-  }
+.center-align {
+  display: flex;
+  text-align: center; /* Aligns the text to the center */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  /* height: 100%;s */
+}
+
+.category-description {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.category-card {
+  position: relative;
+}

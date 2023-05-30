@@ -27,7 +27,7 @@ const RegionSelector = () => {
     fetchRegions();
   }, []);
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     navigate(`/geonode/datasets/${value}`);
   };
 
@@ -42,7 +42,7 @@ const RegionSelector = () => {
 
   return (
     <Select style={{ width: 200 }} onChange={handleChange} placeholder="Select a region">
-      {regions.map(region => (
+      {regions.map((region) => (
         <Option key={region.id} value={region.code}>
           {region.name}
         </Option>
